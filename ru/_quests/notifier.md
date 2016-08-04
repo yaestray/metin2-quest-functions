@@ -8,15 +8,15 @@
 Добавьте в конец вашего файла-библиотеки следующий код:
 
 ````lua
-NOTIFIER_INTERVAL = 60 * 15
-NOTIFIER_MESSAGES = {
+NOTIFIER__INTERVAL = 60 * 15
+NOTIFIER__MESSAGES = {
 	"15 января в 18:00 по МСК будет проходить PvP-турнир. Не забудьте взять с собой своё эго. ",
 	"Подписывайтесь на наш репозиторий на GitHub: github.com/terron-kun/quest-functions ",
 	"Знания - для ботаников. Вместо ОХ-эвента мы решили провести PvP-турнир. "
 }
 
-clear_server_timer("notifier_loop_timer")
-server_loop_timer("notifier_loop_timer", NOTIFIER_INTERVAL)
+clear_server_timer("notifier_loop")
+server_loop_timer("notifier_loop", NOTIFIER__INTERVAL)
 ````
 
 ### notifier.quest
@@ -25,10 +25,10 @@ server_loop_timer("notifier_loop_timer", NOTIFIER_INTERVAL)
 ````lua
 quest notifier begin
 	state start begin
-		when notifier_loop_timer.server_timer begin
-			local msg_count = table.getn(NOTIFIER_MESSAGES)
+		when notifier_loop.server_timer begin
+			local msg_count = table.getn(NOTIFIER__MESSAGES)
 			local random_msg_id = number(1, msg_count)
-			local msg_text = NOTIFIER_MESSAGES[random_msg_id]
+			local msg_text = NOTIFIER__MESSAGES[random_msg_id]
 		
 			notice_all(msg_text)
 		end
@@ -36,8 +36,13 @@ quest notifier begin
 end
 ````
 
-Добавьте в файл `quest_list` (без расширения) строчку `notifier.quest`. Затем заливайте всё на сервер и компилируйте. Не забывайте, что у всех файлов на конце должна быть пустая строка.
+### quest_list
+Добавьте в конец файла `quest_list` (без расширения) следующие квесты:
+
+````
+notifier.quest
+````
 
 ## Конфигурация квеста
-Константа **NOTIFIER_INTERVAL** содержит в себе частоту появления уведомлений в секундах.<br>
-Константа **NOTIFIER_MESSAGES** содержит в себе таблицу возможных сообщений.
+Константа **NOTIFIER__INTERVAL** содержит в себе частоту появления уведомлений в секундах.<br>
+Константа **NOTIFIER__MESSAGES** содержит в себе таблицу возможных сообщений.
