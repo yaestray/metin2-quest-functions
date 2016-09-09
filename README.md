@@ -1,7 +1,7 @@
 # Руководство по квестовым функциям Metin2
 
 <p align="center">
-	<img src="https://github.com/terron-kun/quest-functions/blob/master/_images/banner.gif?raw=true" alt="Логотип">
+	<img src="https://raw.githubusercontent.com/terron-kun/quest-functions/master/_images/banner.gif" alt="Логотип">
 </p>
 
 Данный репозиторий содержит в себе зачастую исчерпывающую документацию по квестовым функциям Metin2. Если вы только начинаете писать квесты, ознакомьтесь с обучающими статьями. Если вы считаете, что знакомы с основами Lua и квестов, то можете перейти сразу к документации.
