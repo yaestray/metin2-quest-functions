@@ -467,7 +467,6 @@ _articles/lua-advanced
 _articles/lua-basics
 _articles/lua-files
 _articles/lua-functions
-_articles/practice__empire_war
 _articles/quest-structure
 _articles/README
 _quests/notifier
