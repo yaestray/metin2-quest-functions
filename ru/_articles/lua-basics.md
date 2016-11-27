@@ -497,7 +497,7 @@ end
 local a, b = "abc", "def"
 
 if a .. b == "abcdef" then
-syschat("пончик ")
+	syschat("пончик ")
 end
 ````
 
